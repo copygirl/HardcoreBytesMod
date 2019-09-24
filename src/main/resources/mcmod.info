@@ -1,0 +1,14 @@
+[{
+  "modid": "hardcorebytesmod",
+  "name": "Hardcore Bytes Mod",
+  "description": "Companion mod for the Hardcore Bytes modpack.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/copygirl/HardcoreBytesMod",
+  "updateUrl": "https://github.com/copygirl/HardcoreBytesMod/releases",
+  "authorList": ["copygirl"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}]
