@@ -1,6 +1,5 @@
 package net.mcft.copy.hardcorebytesmod.content;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,39 +38,28 @@ public class HBItems {
 
     public void initialize() {
 
-        PLANT_FIBER = new Item();
+        PLANT_FIBER = add(new Item(), "plant_fiber");
 
-        PLANT_FIBER_MESH = new Item().setMaxStackSize(1);
-        STRING_MESH      = new Item().setMaxStackSize(1);
+        PLANT_FIBER_MESH = add(new Item().setMaxStackSize(1), "plant_fiber_mesh");
+        STRING_MESH      = add(new Item().setMaxStackSize(1), "string_mesh");
 
-        PRIMITIVE_PLANT_FIBER_SIEVE = new ItemCraftingTool(20);
-        PRIMITIVE_STRING_SIEVE      = new ItemCraftingTool(64);
+        PRIMITIVE_PLANT_FIBER_SIEVE = add(new ItemCraftingTool(20), "primitive_plant_fiber_sieve");
+        PRIMITIVE_STRING_SIEVE      = add(new ItemCraftingTool(64), "primitive_string_sieve");
 
-        FLINT_KNIFE_BLADE  = new Item().setMaxStackSize(4);
-        FLINT_HATCHET_HEAD = new Item().setMaxStackSize(4);
+        FLINT_KNIFE_BLADE  = add(new Item().setMaxStackSize(4), "flint_knife_blade");
+        FLINT_HATCHET_HEAD = add(new Item().setMaxStackSize(4), "flint_hatchet_head");
 
-        PRIMITIVE_FLINT_KNIFE   = new ItemKnife(ToolMaterials.FLINT);
-        PRIMITIVE_FLINT_HATCHET = new ItemHatchet(ToolMaterials.FLINT);
+        PRIMITIVE_FLINT_KNIFE   = add(new ItemKnife(ToolMaterials.FLINT), "primitive_flint_knife");
+        PRIMITIVE_FLINT_HATCHET = add(new ItemHatchet(ToolMaterials.FLINT), "primitive_flint_hatchet");
 
-        // Screw naming and registering everything by hand.
-        // Let's just use reflection to do it for us!
-        try {
-            for (Field field : this.getClass().getFields())
-            if (Item.class.isAssignableFrom(field.getType())) {
-                Item item = (Item)field.get(this);
-                String name = field.getName().toLowerCase();
+    }
 
-                item.setUnlocalizedName(name);
-                item.setRegistryName(name);
-                item.setCreativeTab(HardcoreBytesMod.CREATIVE_TAB);
-
-                ALL_ITEMS.add(item);
-            }
-        } catch (IllegalArgumentException |
-                 IllegalAccessException e) {
-            e.printStackTrace();
-        }
-
+    private Item add(Item item, String name) {
+        ALL_ITEMS.add(item);
+        item.setUnlocalizedName(name);
+        item.setRegistryName(name);
+        item.setCreativeTab(HardcoreBytesMod.CREATIVE_TAB);
+        return item;
     }
 
     @SubscribeEvent
