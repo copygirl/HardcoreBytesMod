@@ -26,9 +26,11 @@ public class HBItems {
     public Item PRIMITIVE_STRING_SIEVE;
 
     public Item FLINT_KNIFE_BLADE;
+    public Item FLINT_SPADE_HEAD;
     public Item FLINT_HATCHET_HEAD;
 
     public Item PRIMITIVE_FLINT_KNIFE;
+    public Item PRIMITIVE_FLINT_SPADE;
     public Item PRIMITIVE_FLINT_HATCHET;
 
 
@@ -47,15 +49,17 @@ public class HBItems {
         PRIMITIVE_STRING_SIEVE      = add(new ItemCraftingTool(64), "primitive_string_sieve");
 
         FLINT_KNIFE_BLADE  = add(new Item().setMaxStackSize(4), "flint_knife_blade");
+        FLINT_SPADE_HEAD   = add(new Item().setMaxStackSize(4), "flint_spade_head");
         FLINT_HATCHET_HEAD = add(new Item().setMaxStackSize(4), "flint_hatchet_head");
 
         PRIMITIVE_FLINT_KNIFE   = add(new ItemKnife(ToolMaterials.FLINT), "primitive_flint_knife");
+        PRIMITIVE_FLINT_SPADE   = add(new ItemSpade(ToolMaterials.FLINT), "primitive_flint_spade");
         PRIMITIVE_FLINT_HATCHET = add(new ItemHatchet(ToolMaterials.FLINT), "primitive_flint_hatchet");
 
     }
 
     private Item add(Item item, String name) {
-        ALL_ITEMS.add(item);
+        this.ALL_ITEMS.add(item);
         item.setUnlocalizedName(name);
         item.setRegistryName(name);
         item.setCreativeTab(HardcoreBytesMod.CREATIVE_TAB);
@@ -65,7 +69,7 @@ public class HBItems {
     @SubscribeEvent
     public void onRegisterItems(RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> registry = event.getRegistry();
-        for (Item item : ALL_ITEMS) registry.register(item);
+        for (Item item : this.ALL_ITEMS) registry.register(item);
     }
 
 }

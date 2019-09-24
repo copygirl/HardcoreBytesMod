@@ -13,45 +13,37 @@ public class ItemKnife extends ItemToolBase {
 
 
     public ItemKnife(ToolMaterial material) {
-        super(material, 2.0F, 2.4F);
+        super(null, material, 2.0F, 2.6F);
+    }
+
+    @Override
+    public boolean isEffective(IBlockState state) {
+        Material material = state.getMaterial();
+        return (material == Material.LEAVES)
+            || (material == Material.PLANTS)
+            || (material == Material.VINE);
     }
 
     @Override
     public float getDestroySpeed(ItemStack stack, IBlockState state) {
-        Material blockMaterial = state.getMaterial();
-        // Slash through leaves really quickly!
-        if (blockMaterial == Material.LEAVES)
-            return 30.0F + 10.0F * this.material.getEfficiency();
-        // Break through plants and vines a little faster.
-        else if ((blockMaterial == Material.PLANTS) ||
-                 (blockMaterial == Material.VINE))
-            return this.material.getEfficiency();
-        // Break cobweb half as fast as a sword.
-        else if (blockMaterial == Material.WEB)
+        if (state.getMaterial() == Material.WEB)
             return 7.5F;
-        else return 1.0F;
+        else if (this.isEffective(state))
+            return 2.0F * this.material.getEfficiency();
+        else return super.getDestroySpeed(stack, state);
     }
 
     @Override
     public boolean onBlockDestroyed(ItemStack stack, World world,
                                     IBlockState state, BlockPos pos,
                                     EntityLivingBase entityLiving) {
-        // NOTE: Unlike other tools, knives will be damaged when
-        //       destroying blocks that break instantly.
+        // Only apply damage sometimes when breaking leaves.
+        if ((state.getMaterial() == Material.LEAVES)
+         && (world.rand.nextDouble() >= LEAVES_DAMAGE_CHANCE))
+            return true;
 
-        Material material = state.getMaterial();
-        // Only sometimes damaged when breaking leaves.
-        if (material == Material.LEAVES) {
-            if (world.rand.nextDouble() < LEAVES_DAMAGE_CHANCE)
-                stack.damageItem(1, entityLiving);
-        // Apply 1 damage when breaking plants or vines.
-        } else if ((material == Material.PLANTS) ||
-                   (material == Material.VINE))
-            stack.damageItem(1, entityLiving);
-        // Apply 2 damage when breaking any other block.
-        else stack.damageItem(2, entityLiving);
-
-        return true;
+        // Since knives are effective on leaves, 1 damage should be applied.
+        return super.onBlockDestroyed(stack, world, state, pos, entityLiving);
     }
 
 }

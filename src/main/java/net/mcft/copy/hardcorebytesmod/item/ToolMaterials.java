@@ -8,6 +8,6 @@ public final class ToolMaterials {
     private ToolMaterials() {  }
 
     public static ToolMaterial FLINT =
-        EnumHelper.addToolMaterial("flint", 1, 56, 2.5F, 1.0F, 6);
+        EnumHelper.addToolMaterial("flint", 0, 56, 2.5F, 1.0F, 6);
 
 }
