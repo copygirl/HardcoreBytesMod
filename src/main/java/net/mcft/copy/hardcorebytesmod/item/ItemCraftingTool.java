@@ -11,7 +11,7 @@ public class ItemCraftingTool extends Item {
     }
 
     @Override
-    public boolean hasContainerItem() { return true; }
+    public boolean hasContainerItem(ItemStack stack) { return true; }
 
     @Override
     public ItemStack getContainerItem(ItemStack stack) {
