@@ -70,10 +70,11 @@ public class ItemWorkKnapping extends Item {
             ItemStack stack     = player.getHeldItemMainhand();
             if (!(stack.getItem() instanceof ItemWorkKnapping)) return;
             ItemWorkKnapping item = (ItemWorkKnapping)stack.getItem();
-            if ((stack.getItemDamage() > 0)                 // Work item isn't already finished.
-             && (player.getCooledAttackStrength(0) >= 0.9F) // Cooldown period is over.
+            if ((stack.getItemDamage() > 0) // Work item isn't already finished.
              && item.isValidKnappingSurface(stack, event.getWorld(), event.getPos(), event.getFace())) {
-                item.workItem(stack, event.getWorld(), event.getPos(), event.getFace());
+                // Only apply work if the cooldown timer is recharged.
+                if (player.getCooledAttackStrength(0) >= 0.9F)
+                    item.workItem(stack, event.getWorld(), event.getPos(), event.getFace());
                 player.resetCooldown();
                 event.setCanceled(true);
             }
