@@ -48,7 +48,7 @@ public class ItemWorkKnapping extends Item {
         float x = pos.getX() + face.getFrontOffsetX() * 0.5F;
         float y = pos.getY() + face.getFrontOffsetY() * 0.5F;
         float z = pos.getZ() + face.getFrontOffsetZ() * 0.5F;
-        world.playSound(x, y, z, this.workSound, SoundCategory.PLAYERS, 0.5F, 2.0F, false);
+        world.playSound(x, y, z, this.workSound, SoundCategory.PLAYERS, 1.0F, 2.5F, false);
     }
 
     @Override
