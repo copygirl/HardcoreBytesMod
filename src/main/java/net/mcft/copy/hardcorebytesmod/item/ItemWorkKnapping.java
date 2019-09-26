@@ -52,9 +52,6 @@ public class ItemWorkKnapping extends Item {
     }
 
     @Override
-    public boolean showDurabilityBar(ItemStack stack) { return true; }
-
-    @Override
     public Multimap<String, AttributeModifier> getAttributeModifiers(
             EntityEquipmentSlot slot, ItemStack stack) {
         Multimap<String, AttributeModifier> multimap = super.getAttributeModifiers(slot, stack);
