@@ -9,7 +9,6 @@ import net.mcft.copy.hardcorebytesmod.item.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemHoe;
 
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -37,10 +36,6 @@ public class HBItems {
     public Item PRIMITIVE_FLINT_HOE;
 
 
-    public HBItems() {
-        MinecraftForge.EVENT_BUS.register(this);
-    }
-
     public void initialize() {
 
         PLANT_FIBER = add(new Item(), "plant_fiber");
@@ -51,10 +46,10 @@ public class HBItems {
         PRIMITIVE_PLANT_FIBER_SIEVE = add(new ItemCraftingTool(20), "primitive_plant_fiber_sieve");
         PRIMITIVE_STRING_SIEVE      = add(new ItemCraftingTool(64), "primitive_string_sieve");
 
-        FLINT_KNIFE_BLADE  = add(new Item().setMaxStackSize(4), "flint_knife_blade");
-        FLINT_SPADE_HEAD   = add(new Item().setMaxStackSize(4), "flint_spade_head");
-        FLINT_HATCHET_HEAD = add(new Item().setMaxStackSize(4), "flint_hatchet_head");
-        FLINT_HOE_HEAD     = add(new Item().setMaxStackSize(4), "flint_hoe_head");
+        FLINT_KNIFE_BLADE  = add(new ItemWorkKnapping(16), "flint_knife_blade");
+        FLINT_SPADE_HEAD   = add(new ItemWorkKnapping(16), "flint_spade_head");
+        FLINT_HATCHET_HEAD = add(new ItemWorkKnapping(16), "flint_hatchet_head");
+        FLINT_HOE_HEAD     = add(new ItemWorkKnapping(16), "flint_hoe_head");
 
         PRIMITIVE_FLINT_KNIFE   = add(new ItemKnife(ToolMaterials.FLINT), "primitive_flint_knife");
         PRIMITIVE_FLINT_SPADE   = add(new ItemSpade(ToolMaterials.FLINT), "primitive_flint_spade");
