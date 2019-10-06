@@ -1,11 +1,13 @@
 itemGroup.hardcorebytesmod=Hardcore Bytes
 
+item.flint_hammer_head.name=Flint Hammer Head
 item.flint_hatchet_head.name=Flint Hatchet Head
 item.flint_hoe_head.name=Flint Hoe Head
 item.flint_knife_blade.name=Flint Knife Blade
 item.flint_spade_head.name=Flint Spade Head
 item.plant_fiber.name=Plant Fiber
 item.plant_fiber_mesh.name=Plant Fiber Mesh
+item.primitive_flint_hammer.name=Primitive Flint Hammer
 item.primitive_flint_hatchet.name=Primitive Flint Hatchet
 item.primitive_flint_hoe.name=Primitive Flint Hoe
 item.primitive_flint_knife.name=Primitive Flint Knife

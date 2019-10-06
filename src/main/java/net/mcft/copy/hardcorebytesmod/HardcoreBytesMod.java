@@ -2,6 +2,7 @@ package net.mcft.copy.hardcorebytesmod;
 
 import net.mcft.copy.hardcorebytesmod.content.HBItems;
 import net.mcft.copy.hardcorebytesmod.item.ItemWorkKnapping.KnappingHandler;
+import net.mcft.copy.hardcorebytesmod.network.HBNetwork;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -22,16 +23,17 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid   = HardcoreBytesMod.MODID,
+@Mod(modid   = HardcoreBytesMod.MOD_ID,
      name    = HardcoreBytesMod.NAME,
      version = HardcoreBytesMod.VERSION)
 public class HardcoreBytesMod {
 
-    public static final String MODID   = "hardcorebytesmod";
+    public static final String MOD_ID  = "hardcorebytesmod";
     public static final String NAME    = "Hardcore Bytes Mod";
     public static final String VERSION = "@VERSION@";
 
-    public static Logger LOG;
+    public static Logger    LOG;
+    public static HBNetwork NETWORK;
 
     // Feature Handlers
     public static KnappingHandler KNAPPING;
@@ -40,7 +42,7 @@ public class HardcoreBytesMod {
     public static HBItems ITEMS;
 
 
-    public static CreativeTabs CREATIVE_TAB = new CreativeTabs(MODID) {
+    public static CreativeTabs CREATIVE_TAB = new CreativeTabs(MOD_ID) {
         @Override
         public ItemStack getTabIconItem()
             { return new ItemStack(ITEMS.PRIMITIVE_FLINT_KNIFE); }
@@ -49,7 +51,8 @@ public class HardcoreBytesMod {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        LOG = event.getModLog();
+        LOG     = event.getModLog();
+        NETWORK = new HBNetwork();
 
         KNAPPING = new KnappingHandler();
 

@@ -17,7 +17,7 @@ public class ItemKnife extends ItemToolBase {
     }
 
     @Override
-    public boolean isEffective(IBlockState state) {
+    public boolean isEffective(ItemStack stack, IBlockState state) {
         Material material = state.getMaterial();
         return (material == Material.LEAVES)
             || (material == Material.PLANTS)
@@ -28,7 +28,7 @@ public class ItemKnife extends ItemToolBase {
     public float getDestroySpeed(ItemStack stack, IBlockState state) {
         if (state.getMaterial() == Material.WEB)
             return 7.5F;
-        else if (this.isEffective(state))
+        else if (this.isEffective(stack, state))
             return 2.0F * this.material.getEfficiency();
         else return super.getDestroySpeed(stack, state);
     }

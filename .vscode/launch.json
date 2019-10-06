@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [{
+    "name": "Client",
+    "type": "java",
+    "request": "launch",
+    "cwd": "${workspaceRoot}/run",
+    "mainClass": "GradleStart",
+    "classPaths": [ "${workspaceRoot}/build/tmp/makeStart/extracted/" ],
+  }, {
+    "name": "Server",
+    "type": "java",
+    "request": "launch",
+    "cwd": "${workspaceRoot}/run",
+    "mainClass": "GradleStartServer",
+    "classPaths": [ "${workspaceRoot}/build/tmp/makeStart/extracted/" ],
+  }]
+}

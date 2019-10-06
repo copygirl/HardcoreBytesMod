@@ -29,11 +29,13 @@ public class HBItems {
     public Item FLINT_SPADE_HEAD;
     public Item FLINT_HATCHET_HEAD;
     public Item FLINT_HOE_HEAD;
+    public Item FLINT_HAMMER_HEAD; // TODO: Flint hammer doesn't make sense.
 
     public Item PRIMITIVE_FLINT_KNIFE;
     public Item PRIMITIVE_FLINT_SPADE;
     public Item PRIMITIVE_FLINT_HATCHET;
     public Item PRIMITIVE_FLINT_HOE;
+    public Item PRIMITIVE_FLINT_HAMMER;
 
 
     public void initialize() {
@@ -50,11 +52,13 @@ public class HBItems {
         FLINT_SPADE_HEAD   = add(new ItemWorkKnapping(16), "flint_spade_head");
         FLINT_HATCHET_HEAD = add(new ItemWorkKnapping(16), "flint_hatchet_head");
         FLINT_HOE_HEAD     = add(new ItemWorkKnapping(16), "flint_hoe_head");
+        FLINT_HAMMER_HEAD  = add(new ItemWorkKnapping(16), "flint_hammer_head");
 
         PRIMITIVE_FLINT_KNIFE   = add(new ItemKnife(ToolMaterials.FLINT), "primitive_flint_knife");
         PRIMITIVE_FLINT_SPADE   = add(new ItemSpade(ToolMaterials.FLINT), "primitive_flint_spade");
         PRIMITIVE_FLINT_HATCHET = add(new ItemHatchet(ToolMaterials.FLINT), "primitive_flint_hatchet");
         PRIMITIVE_FLINT_HOE     = add(new ItemHoe(ToolMaterials.FLINT), "primitive_flint_hoe");
+        PRIMITIVE_FLINT_HAMMER  = add(new ItemHammer(ToolMaterials.FLINT), "primitive_flint_hammer");
 
     }
 

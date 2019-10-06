@@ -6,9 +6,16 @@
   "mcversion": "${mcversion}",
   "url": "https://github.com/copygirl/HardcoreBytesMod",
   "updateUrl": "https://github.com/copygirl/HardcoreBytesMod/releases",
-  "authorList": ["copygirl"],
+  "authorList": [
+    "copygirl"
+  ],
   "credits": "",
   "logoFile": "",
   "screenshots": [],
-  "dependencies": []
+  "useDependencyInformation": true,
+  "requiredMods": [
+    "immersiveengineering"
+  ],
+  "dependencies": [],
+  "dependants": []
 }]

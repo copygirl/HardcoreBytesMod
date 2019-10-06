@@ -26,7 +26,16 @@ minecraft {
     replace "@VERSION@", project.version
 }
 
-dependencies {  }
+repositories {
+    maven {
+        name "jared maven"
+        url "http://blamejared.com/maven"
+    }
+}
+
+dependencies {
+    deobfCompile "blusunrize:ImmersiveEngineering:$ie_version-+"
+}
 
 processResources {
     inputs.property "version", project.version

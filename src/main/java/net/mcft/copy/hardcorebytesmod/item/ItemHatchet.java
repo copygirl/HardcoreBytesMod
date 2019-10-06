@@ -16,9 +16,9 @@ public class ItemHatchet extends ItemToolBase {
     }
 
     @Override
-    public boolean isEffective(IBlockState state) {
+    public boolean isEffective(ItemStack stack, IBlockState state) {
         return (state.getMaterial() == Material.LEAVES)
-            || super.isEffective(state);
+            || super.isEffective(stack, state);
     }
 
     @Override
