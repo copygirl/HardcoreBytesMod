@@ -15,6 +15,16 @@ version = mod_version
 group   = "net.mcft.copy.hardcorebytesmod"
 archivesBaseName = "HardcoreBytesMod-$mc_version"
 
+// If building snapshot version, append "-SNAPSHOT+<commit_hash> to version.
+if (is_snapshot) {
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine "git", "rev-parse", "--short", "HEAD"
+        standardOutput = stdout
+    }
+    version = "$version-SNAPSHOT+${stdout.toString().trim()}"
+}
+
 sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
 compileJava { sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8 }
 
