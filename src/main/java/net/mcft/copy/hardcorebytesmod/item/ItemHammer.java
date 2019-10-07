@@ -32,7 +32,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ItemHammer extends ItemToolBase {
 
     public ItemHammer(ToolMaterial material) {
-        super("pickaxe", material, 5.0F, 1.6F);
+        super("pickaxe", material, 5.0F, 1.0F);
     }
 
     @Override
