@@ -29,9 +29,9 @@ public class ItemWorkKnapping extends Item {
     protected SoundEvent workSound = new SoundEvent(new ResourceLocation("block.stone.hit"));
 
 
-    public ItemWorkKnapping(int workSteps) {
+    public ItemWorkKnapping() {
         this.setMaxStackSize(1);
-        this.setMaxDamage(workSteps);
+        this.setMaxDamage(8);
     }
 
     public boolean isValidKnappingSurface(ItemStack stack, World world,
