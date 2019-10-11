@@ -12,7 +12,7 @@ public class ItemHatchet extends ItemToolBase {
     public static final double LEAVES_DAMAGE_CHANCE = 0.1;
 
     public ItemHatchet(ToolMaterial material) {
-        super("axe", material, 4.0F, 1.2F);
+        super("axe", material, 4.0F, 1.2F, true);
     }
 
     @Override

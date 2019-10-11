@@ -13,7 +13,7 @@ public class ItemKnife extends ItemToolBase {
 
 
     public ItemKnife(ToolMaterial material) {
-        super(null, material, 2.0F, 2.6F);
+        super(null, material, 2.0F, 2.6F, true);
     }
 
     @Override

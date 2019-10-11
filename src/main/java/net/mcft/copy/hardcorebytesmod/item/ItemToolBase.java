@@ -18,18 +18,22 @@ public class ItemToolBase extends Item {
 
     protected final String toolType;
     protected final ToolMaterial material;
+    protected final boolean isWeapon;
     protected float attackDamage;
     protected float attackSpeed;
 
     public ItemToolBase(String toolType, ToolMaterial material,
-                        float baseAttackDamage, float attackSpeed) {
-        this.toolType     = toolType;
-        this.material     = material;
-        this.maxStackSize = 1;
-        this.setMaxDamage(this.material.getMaxUses() - 1);
+                        float baseAttackDamage, float attackSpeed,
+                        boolean isWeapon) {
+        this.toolType = toolType;
+        this.material = material;
+        this.isWeapon = isWeapon;
 
         this.attackDamage = baseAttackDamage + this.material.getAttackDamage();
         this.attackSpeed  = attackSpeed;
+        
+        this.maxStackSize = 1;
+        this.setMaxDamage(this.material.getMaxUses() - 1);
     }
 
     public int getHarvestLevel(ItemStack stack, IBlockState state) {
@@ -72,6 +76,13 @@ public class ItemToolBase extends Item {
         // Apply 2 damage when breaking anything doesn't break instantly.
         else if (state.getBlockHardness(world, pos) > 0.0)
             stack.damageItem(2, entityLiving);
+        return true;
+    }
+    
+    @Override
+    public boolean hitEntity(ItemStack stack, EntityLivingBase target,
+                             EntityLivingBase attacker) {
+        stack.damageItem(isWeapon ? 1 : 2, attacker);
         return true;
     }
 
