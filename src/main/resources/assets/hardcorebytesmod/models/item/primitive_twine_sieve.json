@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "hardcorebytesmod:items/plant_fiber"
+        "layer0": "hardcorebytesmod:items/primitive_twine_sieve"
     },
     "display": {
         "thirdperson": {

@@ -17,12 +17,10 @@ public class HBItems {
 
     public final List<Item> ALL_ITEMS = new ArrayList<>();
 
-    public Item PLANT_FIBER;
-
-    public Item PLANT_FIBER_MESH;
+    public Item TWINE_MESH;
     public Item STRING_MESH;
 
-    public Item PRIMITIVE_PLANT_FIBER_SIEVE;
+    public Item PRIMITIVE_TWINE_SIEVE;
     public Item PRIMITIVE_STRING_SIEVE;
 
     public Item FLINT_KNIFE_BLADE;
@@ -40,13 +38,11 @@ public class HBItems {
 
     public void initialize() {
 
-        PLANT_FIBER = add(new Item(), "plant_fiber");
+        TWINE_MESH  = add(new Item().setMaxStackSize(1), "twine_mesh");
+        STRING_MESH = add(new Item().setMaxStackSize(1), "string_mesh");
 
-        PLANT_FIBER_MESH = add(new Item().setMaxStackSize(1), "plant_fiber_mesh");
-        STRING_MESH      = add(new Item().setMaxStackSize(1), "string_mesh");
-
-        PRIMITIVE_PLANT_FIBER_SIEVE = add(new ItemCraftingTool(20), "primitive_plant_fiber_sieve");
-        PRIMITIVE_STRING_SIEVE      = add(new ItemCraftingTool(64), "primitive_string_sieve");
+        PRIMITIVE_TWINE_SIEVE  = add(new ItemCraftingTool(24), "primitive_twine_sieve");
+        PRIMITIVE_STRING_SIEVE = add(new ItemCraftingTool(64), "primitive_string_sieve");
 
         FLINT_KNIFE_BLADE  = add(new ItemWorkKnapping(), "flint_knife_blade");
         FLINT_SPADE_HEAD   = add(new ItemWorkKnapping(), "flint_spade_head");
