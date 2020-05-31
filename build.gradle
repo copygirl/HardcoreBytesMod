@@ -45,6 +45,8 @@ repositories {
 
 dependencies {
     deobfCompile "blusunrize:ImmersiveEngineering:$ie_version-+"
+    compile project(":athenaeum")
+    compile project(":artisan-worktables")
 }
 
 processResources {

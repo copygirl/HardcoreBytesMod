@@ -35,6 +35,10 @@ public class HBItems {
     public Item PRIMITIVE_FLINT_HOE;
     public Item PRIMITIVE_FLINT_HAMMER;
 
+    public Item WOOD_BUCKET_OF_CLAY;
+    public Item CLAY_BUCKET_OF_CLAY;
+    public Item BUCKET_OF_CLAY;
+
 
     public void initialize() {
 
@@ -55,6 +59,10 @@ public class HBItems {
         PRIMITIVE_FLINT_HATCHET = add(new ItemHatchet(ToolMaterials.FLINT), "primitive_flint_hatchet");
         PRIMITIVE_FLINT_HOE     = add(new ItemHoe(ToolMaterials.FLINT), "primitive_flint_hoe");
         PRIMITIVE_FLINT_HAMMER  = add(new ItemHammer(ToolMaterials.FLINT), "primitive_flint_hammer");
+
+        WOOD_BUCKET_OF_CLAY = add(new ItemBucketOfClay("pyrotech:bucket_wood", 16), "wooden_bucket_of_clay");
+        CLAY_BUCKET_OF_CLAY = add(new ItemBucketOfClay("pyrotech:bucket_clay", 64), "clay_bucket_of_clay");
+        BUCKET_OF_CLAY      = add(new ItemBucketOfClay("minecraft:bucket", 128), "bucket_of_clay");
 
     }
 

@@ -1,5 +1,7 @@
 itemGroup.hardcorebytesmod=Hardcore Bytes
 
+item.bucket_of_clay.name=Bucket of Clay
+item.clay_bucket_of_clay.name=Clay Bucket of Clay
 item.flint_hammer_head.name=Flint Hammer Head
 item.flint_hatchet_head.name=Flint Hatchet Head
 item.flint_hoe_head.name=Flint Hoe Head
@@ -14,3 +16,4 @@ item.primitive_string_sieve.name=Primitive String Sieve
 item.primitive_twine_sieve.name=Primitive Twine Sieve
 item.string_mesh.name=String Mesh
 item.twine_mesh.name=Twine Mesh
+item.wooden_bucket_of_clay.name=Wooden Bucket of Clay

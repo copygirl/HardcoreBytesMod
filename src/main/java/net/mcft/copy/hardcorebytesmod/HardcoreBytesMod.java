@@ -1,6 +1,7 @@
 package net.mcft.copy.hardcorebytesmod;
 
 import net.mcft.copy.hardcorebytesmod.content.HBItems;
+import net.mcft.copy.hardcorebytesmod.item.ItemBucketOfClay;
 import net.mcft.copy.hardcorebytesmod.item.ItemWorkKnapping.KnappingHandler;
 import net.mcft.copy.hardcorebytesmod.network.HBNetwork;
 
@@ -20,6 +21,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import com.codetaylor.mc.artisanworktables.api.ArtisanToolHandlers;
 
 import org.apache.logging.log4j.Logger;
 
@@ -63,6 +66,8 @@ public class HardcoreBytesMod {
         MinecraftForge.EVENT_BUS.register(HardcoreBytesMod.KNAPPING);
 
         HardcoreBytesMod.ITEMS.initialize();
+
+        ArtisanToolHandlers.register(ItemBucketOfClay.ARTISAN_TOOL_HANDLER);
     }
 
     @EventHandler
